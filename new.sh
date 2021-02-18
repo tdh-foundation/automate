@@ -53,7 +53,7 @@ sudo systemctl reload nginx.service
 ##
 echo "Installing Let's Encrypt SSL Certificate"
 if ! sudo test -f "/etc/letsencrypt/live/${CONFIG[SERVER]}/fullchain.pem"; then 
-    sudo certbot certonly -n --nginx --agree-tos -d ${CONFIG[SERVER]} -m it.system@tdh.ch --cert-name ${CONFIG[SERVER]} > /dev/null
+    sudo certbot certonly -n --nginx --agree-tos -d ${CONFIG[SERVER]} --cert-name ${CONFIG[SERVER]} > /dev/null
 fi
 
 if [ $? == 0 ];then
